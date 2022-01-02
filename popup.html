@@ -7,17 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="mystyle.css">
     <h1>Random Number Generator</h1>
-
-    <script src="popup.js">
-
-    </script>
-
+    <script src="popup.js"></script>
 </head>
-
 <body>
-
-
-    <form>
+    <form id="form">
         <input type="checkbox" name="repeating">
         <label for="repeating"> No Repeats </label><br>
 
@@ -30,14 +23,17 @@
         <br><br>
 
         <label for="lbound">Lower Bound:</label><br>
-        <input type="number" id="inputBox" name="lbound" value="0"><br>
+        <input type="number" id="lowerBound" name="lowerBound" value="0"><br>
 
         <label for="ubound">Upper Bound:</label><br>
-        <input type="number" id="inputBox" name="ubound" value="100"><br>
+        <input type="number" id="upperBound" name="upperBound" value="100"><br>
 
         <h2><input type="button" name="generate" id="check" Value="Generate"/></h2>
 
     </form>
+    <h2><textarea readonly  cols="7" rows="1" >You can't change this… or can you?</textarea></h2>
+    <h2><button onclick="copy()">Copy</button></body></h2>
+    
 
 
 
