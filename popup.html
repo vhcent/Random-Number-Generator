@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="mystyle.css">
     <h1>Random Number Generator</h1>
-</head>
-<body>
-    <script>
-        function generate(form) {
-            alert("Hello from your Chrome extension!")
-        }
-    </script>
+    <script src="popup.js"></script>
 
+</head>
+
+<body>
     <form>
-        <input type="checkbox" name="repeating" >
+        <input type="checkbox" name="repeating">
         <label for="repeating"> No Repeats </label><br>
 
         <label for="parity">Parity:</label>
         <select name="parity" id="dropdown">
-          <option value="Both">Both</option>
-          <option value="Even">Even</option>
-          <option value="Odd">Odd</option>
+            <option value="Both">Both</option>
+            <option value="Even">Even</option>
+            <option value="Odd">Odd</option>
         </select>
         <br><br>
 
@@ -32,11 +30,14 @@
         <label for="ubound">Upper Bound:</label><br>
         <input type="number" id="inputBox" name="ubound" value="100"><br>
 
-        <h2><input type="button" name="generate" Value="Click" onClick="generate(this.form)"/></h2>
+        <h2><input type="button" name="generate" id="check" Value="Generate"/></h2>
 
     </form>
+    <textarea readonly id="randNumber" cols="5" rows="5" >You can't change this… or can you?</textarea>
     
 
 
+
 </body>
+
 </html>
