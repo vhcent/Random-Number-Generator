@@ -24,6 +24,10 @@ html {
     color: white;
 }
 
+textarea {
+    resize: none;
+    text-align: center
+}
 /* inputBox {
 
 } */

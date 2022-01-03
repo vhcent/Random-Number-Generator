@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     var lowBound = 0;
     var upBound = 100;
+    var parity = "Both"
 
     setBoundsButton.addEventListener('click', function () {
         numbers = new Array();
@@ -18,8 +19,44 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         lowBound = Number(objects['lowerBound']);
         upBound = Number(objects['upperBound']);
-        for (var i = lowBound; i <= upBound; i++) {
-            numbers.push(i);
+
+        parity = document.getElementById("dropdown").value;
+        if (parity == "Both") {
+            
+            if (lowBound < upBound) {
+                for (var i = lowBound; i <= upBound; i++) {
+                    numbers.push(i);
+                }
+            }
+            else {
+                alert("Lower bound must be less than upper bound.");
+            }
+        }
+        else if (parity == "Even") {
+            if (lowBound < upBound) {
+                if (lowBound % 2==1) {
+                    lowBound++;
+                }
+                for (var i = lowBound; i <= upBound; i = i+2) {
+                    numbers.push(i);
+                }
+            }
+            else {
+                alert("Lower bound must be less than upper bound.");
+            }
+        }
+        else if (parity == "Odd") {
+            if (lowBound < upBound) {
+                if (lowBound % 2==0) {
+                    lowBound++;
+                }
+                for (var i = lowBound; i <= upBound; i = i+2) {
+                    numbers.push(i);
+                }
+            }
+            else {
+                alert("Lower bound must be less than upper bound.");
+            }
         }
     }, false);
 
@@ -34,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //alert("Repeating Button: " + document.getElementById("myCheck").checked)
         if (document.getElementById("myCheck").checked) {
             if (numbers.length == 0) {
-                alert("All numbers have been generated without repetititon")
+                alert("All numbers have been generated without repetititon. Please click the Set Bounds/Reset button to reset the numbers.")
             }
             else {
 
@@ -46,20 +83,26 @@ document.addEventListener('DOMContentLoaded', function () {
                         break;
                     }
                 }
-                alert(randomValue);
                 document.getElementById('generatedNum').value = randomValue;
             }
         }
         else {
-            var randomValue = Math.floor(Math.random() * (upBound - lowBound + 1) + lowBound);
-            document.getElementById('generatedNum').value = randomValue;
+            var randomValue;
+            if(parity == "Both")
+            {
+                randomValue = Math.floor(Math.random() * (upBound - lowBound + 1) + lowBound);
+                document.getElementById('generatedNum').value = randomValue;
+            } 
+            else if(parity == "Even")
+            { 
+                randomValue = Math.floor((Math.random() * (upBound - lowBound + 1) / 2 + lowBound / 2) * 2);
+            }
+            else if (parity == "Odd") {
+                randomValue = Math.floor((Math.random() * (upBound - lowBound + 1) / 2 + lowBound / 2) * 2) - 1;
+            }
         }
 
 
         //alert("randomValue = " + randomValue);
     }, false);
 }, false);
-
-function copy() {
-    let textarea = document.getElementById("textarea");
-}
