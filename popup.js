@@ -96,9 +96,11 @@ document.addEventListener('DOMContentLoaded', function () {
             else if(parity == "Even")
             { 
                 randomValue = Math.floor((Math.random() * (upBound - lowBound + 1) / 2 + lowBound / 2) * 2);
+                document.getElementById('generatedNum').value = randomValue;
             }
             else if (parity == "Odd") {
                 randomValue = Math.floor((Math.random() * (upBound - lowBound + 1) / 2 + lowBound / 2) * 2) - 1;
+                document.getElementById('generatedNum').value = randomValue;
             }
         }
 

@@ -4,7 +4,8 @@
     "description": "A random number generator with different features",
     "version": "1.0",
     "content_scripts": [
-        {
+        {   
+            "matches": ["<all_urls>"],
             "js": [
                 "popup.js"
             ]
