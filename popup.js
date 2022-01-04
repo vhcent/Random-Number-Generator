@@ -61,13 +61,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }, false);
 
     checkButton.addEventListener('click', function () {
-
+        parity = document.getElementById("dropdown").value;
         var elements = document.getElementById("form").elements;
         var objects = {};
         for (var i = 0; i < elements.length; i++) {
             var item = elements.item(i);
             objects[item.name] = item.value;
         }
+        lowBound = Number(objects['lowerBound']);
+        upBound = Number(objects['upperBound']);
         //alert("Repeating Button: " + document.getElementById("myCheck").checked)
         if (document.getElementById("myCheck").checked) {
             if (numbers.length == 0) {
@@ -95,11 +97,11 @@ document.addEventListener('DOMContentLoaded', function () {
             } 
             else if(parity == "Even")
             { 
-                randomValue = Math.floor((Math.random() * (upBound - lowBound + 1) / 2 + lowBound / 2) * 2);
+                randomValue = (Math.floor(Math.random() * (upBound - lowBound + 1) / 2 + lowBound / 2)) * 2;
                 document.getElementById('generatedNum').value = randomValue;
             }
             else if (parity == "Odd") {
-                randomValue = Math.floor((Math.random() * (upBound - lowBound + 1) / 2 + lowBound / 2) * 2) - 1;
+                randomValue = (Math.floor(Math.random() * (upBound - lowBound + 1) / 2 + lowBound / 2)) * 2 + 1;
                 document.getElementById('generatedNum').value = randomValue;
             }
         }
