@@ -1,4 +1,5 @@
 # Random-Number-Generator-Chrome-Extension
+### Created by [Vincent Huang](https://github.com/vhcent) and [Aroop Biswal](https://github.com/AroopBiswal)
 A google chrome random number generator with options for parity, bounds, and repetition.<br />
 The extension is in the marketplace at https://chrome.google.com/webstore/detail/random-number-generator/neehkacloahjodofibhajlbmgpdfhkgc/related
 
